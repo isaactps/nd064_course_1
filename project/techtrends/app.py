@@ -3,7 +3,9 @@ import sqlite3
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 import os
+import sys
 import logging
+from logging import handlers
 
 db_conn_count = 0
 
@@ -45,7 +47,7 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-      app.logger.info('Post not existent. 404 status returned')
+      app.logger.error('Post not existent. 404 status returned')
       return render_template('404.html'), 404
     else:
       return render_template('post.html', post=post)
@@ -114,6 +116,15 @@ def metrics():
 if __name__ == "__main__":
 
     ## stream logs to a file
-    logging.basicConfig(filename='app.log',level=logging.DEBUG)
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        handlers=[
+        logging.FileHandler("app.log"),
+        logging.StreamHandler()
+        ]
+    )
+    
+    logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
     
     app.run(host='0.0.0.0', port='3111')

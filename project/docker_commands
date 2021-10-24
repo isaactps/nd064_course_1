@@ -6,25 +6,34 @@ docker run -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
 docker ps
-docker exec -it 1c936cedc20e /bin/bash
+docker exec -it b1c431634685 /bin/bash
 cat app.log
 
 ## Logs from the container running the TechTrends application
-INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
-INFO:werkzeug:172.17.0.1 - - [31/Aug/2021 03:13:28] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:172.17.0.1 - - [31/Aug/2021 03:13:29] "GET /static/css/main.css HTTP/1.1" 200 -
-INFO:werkzeug:172.17.0.1 - - [31/Aug/2021 03:13:29] "GET /favicon.ico HTTP/1.1" 404 -
-INFO:app:About Page is accessed
-INFO:werkzeug:172.17.0.1 - - [31/Aug/2021 03:15:51] "GET /about HTTP/1.1" 200 -
-INFO:app:Flask is a good learning tool for Web Exploration is retrieved
-INFO:werkzeug:172.17.0.1 - - [31/Aug/2021 03:15:57] "GET /8 HTTP/1.1" 200 -
-INFO:app:Health status request successfull
-INFO:werkzeug:172.17.0.1 - - [31/Aug/2021 03:29:17] "GET /healthz HTTP/1.1" 200 -
-INFO:app:Metrics request successfull
-INFO:werkzeug:172.17.0.1 - - [31/Aug/2021 03:29:24] "GET /metrics HTTP/1.1" 200 -
-INFO:app:Kubernetes v1.20 Release Notes is retrieved
-INFO:werkzeug:172.17.0.1 - - [31/Aug/2021 03:29:33] "GET /3 HTTP/1.1" 200 -
-INFO:werkzeug:172.17.0.1 - - [31/Aug/2021 03:33:01] "GET /create HTTP/1.1" 200 -
-INFO:app:My Flask Project Post 4 created
-INFO:werkzeug:172.17.0.1 - - [31/Aug/2021 03:34:17] "POST /create HTTP/1.1" 302 -
-INFO:werkzeug:172.17.0.1 - - [31/Aug/2021 03:34:17] "GET / HTTP/1.1" 200 - 
+2021-10-24 07:06:56,353 [INFO]  * Running on http://192.168.87.235:3111/ (Press CTRL+C to quit)
+2021-10-24 07:07:02,277 [INFO] 192.168.80.1 - - [24/Oct/2021 07:07:02] "GET / HTTP/1.1" 200 -
+2021-10-24 07:07:02,307 [INFO] 192.168.80.1 - - [24/Oct/2021 07:07:02] "GET /static/css/main.css HTTP/1.1" 200 -
+2021-10-24 07:07:16,051 [INFO] About Page is accessed
+2021-10-24 07:07:16,053 [INFO] 192.168.80.1 - - [24/Oct/2021 07:07:16] "GET /about HTTP/1.1" 200 -
+2021-10-24 07:07:16,083 [INFO] 192.168.80.1 - - [24/Oct/2021 07:07:16] "GET /static/css/main.css HTTP/1.1" 304 -
+2021-10-24 07:07:32,708 [INFO] Health status request successfull
+2021-10-24 07:07:32,708 [INFO] 192.168.80.1 - - [24/Oct/2021 07:07:32] "GET /healthz HTTP/1.1" 200 -
+2021-10-24 07:07:39,843 [INFO] Metrics request successfull
+2021-10-24 07:07:39,844 [INFO] 192.168.80.1 - - [24/Oct/2021 07:07:39] "GET /metrics HTTP/1.1" 200 -
+2021-10-24 07:08:44,413 [INFO] Kubernetes Certification is retrieved
+2021-10-24 07:08:44,417 [INFO] 192.168.80.1 - - [24/Oct/2021 07:08:44] "GET /6 HTTP/1.1" 200 -
+2021-10-24 07:08:44,445 [INFO] 192.168.80.1 - - [24/Oct/2021 07:08:44] "GET /static/css/main.css HTTP/1.1" 304 -
+2021-10-24 07:09:00,847 [INFO] 192.168.80.1 - - [24/Oct/2021 07:09:00] "GET /create HTTP/1.1" 200 -
+2021-10-24 07:09:00,876 [INFO] 192.168.80.1 - - [24/Oct/2021 07:09:00] "GET /static/css/main.css HTTP/1.1" 304 -
+2021-10-24 07:09:45,695 [INFO] First Sample Post for Techtrends created
+2021-10-24 07:09:45,696 [INFO] 192.168.80.1 - - [24/Oct/2021 07:09:45] "POST /create HTTP/1.1" 302 -
+2021-10-24 07:09:45,704 [INFO] 192.168.80.1 - - [24/Oct/2021 07:09:45] "GET / HTTP/1.1" 200 -
+2021-10-24 07:09:45,735 [INFO] 192.168.80.1 - - [24/Oct/2021 07:09:45] "GET /static/css/main.css HTTP/1.1" 304 -
+2021-10-24 07:10:12,022 [INFO] First Sample Post for Techtrends is retrieved
+2021-10-24 07:10:12,023 [INFO] 192.168.80.1 - - [24/Oct/2021 07:10:12] "GET /7 HTTP/1.1" 200 -
+2021-10-24 07:10:12,053 [INFO] 192.168.80.1 - - [24/Oct/2021 07:10:12] "GET /static/css/main.css HTTP/1.1" 304 -
+2021-10-24 07:10:17,843 [ERROR] Post not existent. 404 status returned
+2021-10-24 07:10:17,844 [INFO] 192.168.80.1 - - [24/Oct/2021 07:10:17] "GET /8 HTTP/1.1" 404 -
+2021-10-24 07:10:17,875 [INFO] 192.168.80.1 - - [24/Oct/2021 07:10:17] "GET /static/css/main.css HTTP/1.1" 304 -
+2021-10-24 07:10:37,426 [INFO] Metrics request successfull
+2021-10-24 07:10:37,427 [INFO] 192.168.80.1 - - [24/Oct/2021 07:10:37] "GET /metrics HTTP/1.1" 200 -
